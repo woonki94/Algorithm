@@ -4,7 +4,7 @@
 #include <queue>
 
 /*
-* 스택/큐 - 기능개발(42586)
+* 스택/큐 - 기능개발(42586) 
 * https://programmers.co.kr/learn/courses/30/lessons/42586
 */
 
