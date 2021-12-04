@@ -4,7 +4,7 @@
 #include <queue>
 
 /*
-* 스택/큐 - 기능개발(42586)  
+* 스택/큐 - 기능개발(42586)
 * https://programmers.co.kr/learn/courses/30/lessons/42586
 */
 
@@ -42,39 +42,31 @@ std::vector<int> solution3(std::vector<int> progresses, std::vector<int> speeds)
         index++;
     }
 
-    while (!TakenDays.empty()) // 7 3 9
+    while (!TakenDays.empty())
     {
         int count = 1; // 함께 배포할 작업 수 (현재 작업 포함)
 
-        if (TakenDays.size() == 1)
+        int currentWork = TakenDays.front();
+        bool check = true;
+        while (check && !TakenDays.empty())
         {
-            answer.push_back(count);
-            TakenDays.pop();
-        }
-        else
-        {
-            int currentWork = TakenDays.front();
-            bool check = true;
-            while (check && !TakenDays.empty())
-            {
-                try {
-                    TakenDays.pop();
-                    if (TakenDays.empty())
-                        throw count;
-                }
-                catch(int ans) {
-                    answer.push_back(ans);
-                    break;
-                }
+            try {
+                TakenDays.pop();
+                if (TakenDays.empty())
+                    throw count;
+            }
+            catch (int ans) {
+                answer.push_back(ans);
+                break;
+            }
 
-                if (currentWork >= TakenDays.front())
-                    count++;
-                else
-                {
-                    answer.push_back(count);
-                    check = false;
-                    //break;
-                }
+            if (currentWork >= TakenDays.front())
+                count++;
+            else
+            {
+                answer.push_back(count);
+                check = false;
+                //break;
             }
         }
     }
@@ -126,5 +118,5 @@ std::vector<int> solution2(std::vector<int> progresses, std::vector<int> speeds)
             }
         }
     }
-    return answer;   
+    return answer;
 }
