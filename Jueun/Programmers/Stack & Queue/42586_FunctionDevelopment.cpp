@@ -26,7 +26,7 @@ int main()
 
 std::vector<int> solution3(std::vector<int> progresses, std::vector<int> speeds) {
     /*
-    * 3nd solution: 2021.12.05 (queue 사용)
+    * 3rd solution: 2021.12.05 (queue 사용)
     * 정확성: 100.0
     */
     std::vector<int> answer;
